@@ -2,13 +2,24 @@ const canvas = document.getElementById('signature-pad');
 const ctx = canvas.getContext('2d');
 const printBtn = document.getElementById('print-btn');
 const clearBtn = document.getElementById('clear-btn');
+<<<<<<< HEAD
 const statusText = document.getElementById('status');
 const dateSpan = document.getElementById('current-date');
+=======
+const saveBtn = document.getElementById('save-btn');
+const statusText = document.getElementById('status');
+const dateSpan = document.getElementById('current-date');
+const signatureHistory = document.getElementById('signature-history');
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
 
 // Postavi današnji datum
 dateSpan.textContent = new Date().toLocaleDateString('hr-HR');
 
 let isDrawing = false;
+<<<<<<< HEAD
+=======
+let signatures = JSON.parse(localStorage.getItem('signatures')) || [];
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
 
 // Funkcije za crtanje
 function startDrawing(e) {
@@ -27,7 +38,11 @@ function draw(e) {
 
     ctx.lineWidth = 2;
     ctx.lineCap = 'round';
+<<<<<<< HEAD
     ctx.strokeStyle = '#000';
+=======
+    ctx.strokeStyle = '#5c00d5';
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
 
     // Pozicioniranje ovisno o mišu ili dodiru
     const rect = canvas.getBoundingClientRect();
@@ -58,16 +73,78 @@ function checkSignatureCoverage() {
 
     statusText.textContent = `Potpisano: ${percentage.toFixed(1)}%`;
 
+<<<<<<< HEAD
     // Ako je potpisano više od 2%, prikaži gumb
     if (percentage >= 2) {
         printBtn.style.display = 'inline-block';
         statusText.style.color = '#27ae60';
     } else {
+=======
+    // Ako je potpisano više od 2%, prikaži gumbe
+    if (percentage >= 2) {
+        saveBtn.style.display = 'inline-block';
+        printBtn.style.display = 'inline-block';
+        statusText.style.color = '#27ae60';
+    } else {
+        saveBtn.style.display = 'none';
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
         printBtn.style.display = 'none';
         statusText.style.color = '#7f8c8d';
     }
 }
 
+<<<<<<< HEAD
+=======
+// Funkcija za prikaz povijesti potpisa
+function displaySignatures() {
+    if (signatures.length === 0) {
+        signatureHistory.innerHTML = '<p class="empty-message">Nema spremljenih potpisa</p>';
+        return;
+    }
+
+    signatureHistory.innerHTML = '';
+    signatures.forEach((sig, index) => {
+        const item = document.createElement('div');
+        item.className = 'signature-item';
+        item.innerHTML = `
+            <img src="${sig.image}" alt="Potpis ${index + 1}">
+            <p class="date">${sig.date}</p>
+            <button class="delete-btn" onclick="deleteSignature(${index})">Obriši</button>
+        `;
+        signatureHistory.appendChild(item);
+    });
+}
+
+// Funkcija za spremanje potpisa
+function saveSignature() {
+    const signatureImage = canvas.toDataURL('image/png');
+    const currentDate = new Date().toLocaleString('hr-HR');
+    
+    signatures.unshift({
+        image: signatureImage,
+        date: currentDate
+    });
+    
+    localStorage.setItem('signatures', JSON.stringify(signatures));
+    displaySignatures();
+    
+    // Očisti canvas nakon spremanja
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    checkSignatureCoverage();
+    
+    alert('Potpis uspješno spremljen!');
+}
+
+// Funkcija za brisanje potpisa
+function deleteSignature(index) {
+    if (confirm('Jeste li sigurni da želite obrisati ovaj potpis?')) {
+        signatures.splice(index, 1);
+        localStorage.setItem('signatures', JSON.stringify(signatures));
+        displaySignatures();
+    }
+}
+
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
 // Event listeneri
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mousemove', draw);
@@ -83,6 +160,17 @@ clearBtn.addEventListener('click', () => {
     checkSignatureCoverage();
 });
 
+<<<<<<< HEAD
 printBtn.addEventListener('click', () => {
     window.print();
 });
+=======
+saveBtn.addEventListener('click', saveSignature);
+
+printBtn.addEventListener('click', () => {
+    window.print();
+});
+
+// Inicijalizacija - prikaži spremljene potpise pri učitavanju stranice
+displaySignatures();
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076

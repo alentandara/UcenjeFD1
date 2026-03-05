@@ -8,17 +8,109 @@ body {
     color: var(--primary-color);
     padding: 40px;
     background: #f4f4f4;
+<<<<<<< HEAD
 }
 
 .container {
     max-width: 800px;
     margin: auto;
+=======
+    margin: 0;
+}
+
+.main-layout {
+    display: flex;
+    gap: 30px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.container {
+    flex: 1;
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
     background: white;
     padding: 50px;
     border: 1px solid #ddd;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+<<<<<<< HEAD
+=======
+.sidebar {
+    width: 350px;
+    background: white;
+    padding: 30px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#signature-history {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.signature-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fafafa;
+    transition: transform 0.2s;
+}
+
+.signature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.signature-item img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    background: white;
+    margin-bottom: 10px;
+}
+
+.signature-item .date {
+    font-size: 12px;
+    color: #7f8c8d;
+    text-align: center;
+}
+
+.signature-item .delete-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.signature-item .delete-btn:hover {
+    background: #c0392b;
+}
+
+.empty-message {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 20px;
+}
+
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
 h1 {
     text-align: center;
     text-transform: uppercase;
@@ -68,6 +160,16 @@ button {
     margin-right: 10px;
 }
 
+<<<<<<< HEAD
+=======
+#save-btn {
+    background: #3498db;
+    color: white;
+    margin-right: 10px;
+    display: none;
+}
+
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
 #print-btn {
     background: #27ae60;
     color: white;
@@ -83,6 +185,17 @@ button {
         padding: 0;
     }
 
+<<<<<<< HEAD
+=======
+    .main-layout {
+        display: block;
+    }
+
+    .sidebar {
+        display: none !important;
+    }
+
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
     .container {
         border: none;
         box-shadow: none;
@@ -92,7 +205,12 @@ button {
     }
 
     .controls,
+<<<<<<< HEAD
     #clear-btn {
+=======
+    #clear-btn,
+    #save-btn {
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
         display: none !important;
     }
 
@@ -113,4 +231,8 @@ button {
     #status {
         display: none;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
