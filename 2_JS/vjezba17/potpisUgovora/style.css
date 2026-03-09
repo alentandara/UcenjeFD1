@@ -8,6 +8,13 @@ body {
     color: var(--primary-color);
     padding: 40px;
     background: #f4f4f4;
+<<<<<<< HEAD
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+=======
     margin: 0;
 }
 
@@ -20,12 +27,15 @@ body {
 
 .container {
     flex: 1;
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
     background: white;
     padding: 50px;
     border: 1px solid #ddd;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+<<<<<<< HEAD
+=======
 .sidebar {
     width: 350px;
     background: white;
@@ -100,6 +110,7 @@ body {
     padding: 20px;
 }
 
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
 h1 {
     text-align: center;
     text-transform: uppercase;
@@ -149,6 +160,8 @@ button {
     margin-right: 10px;
 }
 
+<<<<<<< HEAD
+=======
 #save-btn {
     background: #3498db;
     color: white;
@@ -156,6 +169,7 @@ button {
     display: none;
 }
 
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
 #print-btn {
     background: #27ae60;
     color: white;
@@ -171,6 +185,8 @@ button {
         padding: 0;
     }
 
+<<<<<<< HEAD
+=======
     .main-layout {
         display: block;
     }
@@ -179,6 +195,7 @@ button {
         display: none !important;
     }
 
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
     .container {
         border: none;
         box-shadow: none;
@@ -188,8 +205,12 @@ button {
     }
 
     .controls,
+<<<<<<< HEAD
+    #clear-btn {
+=======
     #clear-btn,
     #save-btn {
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076
         display: none !important;
     }
 
@@ -210,4 +231,8 @@ button {
     #status {
         display: none;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8b2c882b6b1fb03fb594108f925563e1c27a4076

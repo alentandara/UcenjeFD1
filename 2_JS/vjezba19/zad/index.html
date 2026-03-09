@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="hr">
+<<<<<<< HEAD
 
+=======
+>>>>>>> e6570eb29a6e29a366c8cc931fd1f74dd2caaa6c
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VueJS Kviz</title>
     <link rel="stylesheet" href="css/app.css">
+<<<<<<< HEAD
 
 </head>
 
+=======
+    
+</head>
+>>>>>>> e6570eb29a6e29a366c8cc931fd1f74dd2caaa6c
 <body>
     <div id="app" v-cloak>
         <div class="spremnik-kviza">
@@ -16,7 +24,11 @@
                 <div v-if="!pokaziRezultate">
                     <div class="zaglavlje">
                         <h4 class="naslov">JS ES6 Kviz</h4>
+<<<<<<< HEAD
                         <span class="znacka">Pitanje {{ indeks + 1 }}/{{brojPitanja}}</span>
+=======
+                        <span class="znacka">Pitanje {{ indeks + 1 }}/5</span>
+>>>>>>> e6570eb29a6e29a366c8cc931fd1f74dd2caaa6c
                     </div>
 
                     <div class="progres-okvir">
@@ -26,8 +38,17 @@
                     <h5 class="pitanje-tekst">{{ trenutnoPitanje.pitanje }}</h5>
 
                     <div class="popis-odgovora">
+<<<<<<< HEAD
                         <button v-for="odgovor in trenutnoPitanje.odgovori" :key="odgovor" class="gumb-odgovor"
                             @click="obradiOdgovor(odgovor)">
+=======
+                        <button 
+                            v-for="odgovor in trenutnoPitanje.odgovori" 
+                            :key="odgovor"
+                            class="gumb-odgovor"
+                            @click="obradiOdgovor(odgovor)"
+                        >
+>>>>>>> e6570eb29a6e29a366c8cc931fd1f74dd2caaa6c
                             {{ odgovor }}
                         </button>
                     </div>
@@ -35,10 +56,17 @@
 
                 <div v-else class="tekst-centar">
                     <h2 class="mb-3">Kraj kruga!</h2>
+<<<<<<< HEAD
                     <div class="veliki-rezultat">{{ rezultat }}/{{brojPitanja}}</div>
                     <h3 class="ocjena-tekst">{{ izracunajOcjenu }}</h3>
                     <button class="gumb-akcija" @click="pokreniKrug">
                         Pokreni novi krug (novih {{brojPitanja}} pitanja)
+=======
+                    <div class="veliki-rezultat">{{ rezultat }}/5</div>
+                    <h3 class="ocjena-tekst">{{ izracunajOcjenu }}</h3>
+                    <button class="gumb-akcija" @click="pokreniKrug">
+                        Pokreni novi krug (novih 5 pitanja)
+>>>>>>> e6570eb29a6e29a366c8cc931fd1f74dd2caaa6c
                     </button>
                 </div>
             </div>
@@ -48,5 +76,8 @@
     <script src="js/pitanja.js"></script>
     <script src="js/app.js"></script>
 </body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> e6570eb29a6e29a366c8cc931fd1f74dd2caaa6c
 </html>
