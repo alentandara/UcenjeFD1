@@ -1,5 +1,4 @@
-function kreirajPitanja() {
-    return [{
+const skupPitanja = [{
         pitanje: 'Kojom ključnom rječju definiramo varijablu čiju vrijednost možemo mijenjati?',
         tocno: 'let',
         odgovori: ['const', 'let', 'var']
@@ -69,5 +68,4 @@ function kreirajPitanja() {
         tocno: 'for',
         odgovori: ['while', 'for', 'do while']
     }
-]
-}
+];
