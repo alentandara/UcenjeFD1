@@ -1,0 +1,90 @@
+import { Button, Col, Form, Row } from "react-bootstrap";
+import { RouteNames } from "../../constants";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import SmjerService from "../../services/smjerovi/SmjerService";
+
+export default function SmjerPromjena() {
+       async function promjeni(smjer) {
+        console.table(smjer)
+        
+       }
+      useEffect()=>{
+        const navigate=useNavigate()
+        const[smjer, setSmjer]=useState()
+         const params = useParams()
+        async function ucitajSmjer(){
+        await SmjerService.getBySifra(params.sifra).then((odgovor)=>{
+
+          navigate
+        }
+         
+        }
+          
+        }
+      }
+     function odradiSubmit(e){
+      e.preventDefault() //nemoj odraditi submit
+      const podaci = new FormData(e.target)
+      promjeni({
+             naziv: podaci.get('naziv'),
+             trajanje: parseInt(podaci.get('trajanje')),
+             cijena: parseFloat(podaci.get('cijena')),
+             datumPokretanja: new Date (podaci.get('datumPokretanja')).toISOString(),
+             aktivan: podaci.get('aktivan')==='on'
+      })
+     }
+
+        
+
+  return (
+    <>
+
+      <h3>Unos novog smjera</h3>
+      <Form onSubmit={odradiSubmit}>
+        <Form.Group controlId="naziv">
+          <Form.Label>Naziv</Form.Label>
+          <Form.Control type="text" name="naziv" required />
+        </Form.Group>
+
+        <Form.Group controlId="trajanje">
+          <Form.Label>Trajanje</Form.Label>
+          <Form.Control type="number" name="trajanje" step={1} />
+        </Form.Group>
+
+        <Form.Group controlId="cijena">
+          <Form.Label>Cijena</Form.Label>
+          <Form.Control type="number" name="cijena" step={0.01} />
+        </Form.Group>
+
+        <Form.Group controlId="datumPokretanja">
+          <Form.Label>Datum pokretanja</Form.Label>
+          <Form.Control type="date" name="datumPokretanja" />
+        </Form.Group>
+
+         <Form.Group controlId="aktivan">
+        
+          <Form.Check label="Aktivan" name="aktivan" />
+        </Form.Group>
+
+        <Row className="mt-4">
+         <Col>
+         <Link to={RouteNames.SMJEROVI} className="btn btn-danger">
+         Odustani
+         </Link>
+         </Col>
+         <Col>
+         <Button type="submit" variant="success">
+          Dodaj novi smjer
+         </Button>
+         </Col>
+
+        </Row>
+
+
+
+      </Form>
+    </>
+
+  )
+}
